@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="48" fill="url(#g2)"/>
+  <rect x="150" y="120" width="520" height="360" rx="32" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)"/>
+  <rect x="930" y="220" width="430" height="300" rx="32" fill="rgba(255,255,255,0.1)"/>
+  <text x="190" y="210" fill="#e0f2fe" font-size="56" font-family="'Segoe UI', sans-serif" font-weight="600">Smart Classrooms</text>
+  <text x="190" y="270" fill="#e0f2fe" font-size="28" font-family="'Segoe UI', sans-serif">Interactive boards, AR-ready labs, and collaborative pods</text>
+  <text x="190" y="330" fill="#e0f2fe" font-size="28" font-family="'Segoe UI', sans-serif">Built for hands-on learning and creativity</text>
+  <rect x="190" y="580" width="420" height="70" rx="35" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.32)"/>
+  <text x="220" y="627" fill="#fff" font-size="28" font-family="'Segoe UI', sans-serif" font-weight="600">Explore Programs ?</text>
+</svg>

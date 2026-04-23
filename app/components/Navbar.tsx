@@ -17,22 +17,22 @@ export default function Navbar() {
               priority
             />
           </Link>
-          <div className="hidden leading-tight sm:block">
+          {/* <div className="hidden leading-tight sm:block">
             <p className="text-lg font-semibold text-zinc-900">Universal kids zone</p>
-          </div>
+          </div> */}
         </div>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-700 md:flex">
           <Link href="/#home" className="transition hover:text-red-600">Home</Link>
           <Link href="/about" className="transition hover:text-red-600">About</Link>
-          <Link href="/#features" className="transition hover:text-red-600">Features</Link>
-          <Link href="/#gallery" className="transition hover:text-red-600">Gallery</Link>
-          <Link href="/#notice" className="transition hover:text-red-600">Notice</Link>
-          <Link href="/#contact" className="transition hover:text-red-600">Contact</Link>
+          <Link href="/features" className="transition hover:text-red-600">Features</Link>
+          <Link href="/gallery" className="transition hover:text-red-600">Gallery</Link>
+          <Link href="/notice" className="transition hover:text-red-600">Notice</Link>
+          <Link href="/contact" className="transition hover:text-red-600">Contact</Link>
         </nav>
 
         <Link
-          href="/#notice"
+          href="/admission"
           className="inline-flex h-11 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-semibold text-white shadow-[0_20px_50px_-30px_rgba(239,68,68,0.7)] transition hover:bg-red-700"
         >
           Admission Open

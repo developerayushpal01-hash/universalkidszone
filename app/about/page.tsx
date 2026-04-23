@@ -9,7 +9,7 @@ export default function AboutPage() {
       <Navbar />
       <main className="min-h-screen bg-white text-slate-900">
         <section className="bg-gradient-to-b from-rose-50 to-white px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto w-full max-w-5xl text-center">
+          <div className="mx-auto w-full max-w-7xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700">
               About Us
             </p>
@@ -24,7 +24,7 @@ export default function AboutPage() {
         </section>
 
         <section className="px-4 py-14 sm:px-6 lg:px-8">
-          <div className="mx-auto grid w-full max-w-6xl gap-6 md:grid-cols-3">
+          <div className="mx-auto grid w-full max-w-7xl gap-6 md:grid-cols-3">
             <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
               <h2 className="text-xl font-bold">Our Vision</h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
@@ -50,54 +50,60 @@ export default function AboutPage() {
         </section>
 
         <section className="bg-[#f5f5f5] px-4 py-14 sm:px-6 lg:px-8">
-          <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-2 lg:items-center">
-            <article className="rounded-3xl bg-white p-8 shadow-sm sm:p-10">
-              <h2 className="text-3xl font-bold text-slate-800">Dear Parents and Students,</h2>
-              <p className="mt-6 text-lg leading-relaxed text-slate-700">
-                Creating a safe, fearless, and secure environment is the foremost
-                priority for any institution that strives for excellence in education.
-                Our students are the true assets of our nation, and it is our
-                responsibility to nurture them with care, knowledge, and strong values.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-700">
-                At our school, we are fully committed to providing quality education
-                along with the overall development of every child. We believe that
-                education is not just about academics, but also about building
-                character, confidence, and responsibility.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-700">
-                To turn our shared vision into reality, we seek your sincere
-                cooperation, dedication, and discipline. Discipline is the foundation
-                of success. It shapes personality, strengthens character, and helps
-                individuals achieve their goals in life.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-700">
-                Let us work together with unity, respect, and determination to create
-                a bright future for our children.
-              </p>
-              <p className="mt-8 text-xl font-bold text-slate-900">
-                With best wishes,
-              </p>
-              <p className="mt-1 text-2xl font-extrabold text-slate-900">
-                Mr. Jaison Joseph (M.A., B.Ed., MBA)
-              </p>
-              <p className="mt-1 text-lg italic text-slate-600">Principal</p>
-            </article>
+          <div className="mx-auto w-full max-w-7xl">
+            <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
+              <div className="grid gap-10 lg:grid-cols-[2.2fr_1fr] lg:items-center">
+                <article>
+                  <h2 className="text-3xl font-bold text-slate-800">Dear Parents and Students,</h2>
+                  <p className="mt-6 text-lg leading-relaxed text-slate-700">
+                    Creating a safe, fearless, and secure environment is the foremost
+                    priority for any institution that strives for excellence in education.
+                    Our students are the true assets of our nation, and it is our
+                    responsibility to nurture them with care, knowledge, and strong values.
+                  </p>
+                  <p className="mt-4 text-lg leading-relaxed text-slate-700">
+                    At our school, we are fully committed to providing quality education
+                    along with the overall development of every child. We believe that
+                    education is not just about academics, but also about building
+                    character, confidence, and responsibility.
+                  </p>
+                  <p className="mt-4 text-lg leading-relaxed text-slate-700">
+                    To turn our shared vision into reality, we seek your sincere
+                    cooperation, dedication, and discipline. Discipline is the foundation
+                    of success. It shapes personality, strengthens character, and helps
+                    individuals achieve their goals in life.
+                  </p>
+                  <p className="mt-4 text-lg leading-relaxed text-slate-700">
+                    Let us work together with unity, respect, and determination to create
+                    a bright future for our children.
+                  </p>
+                  <p className="mt-8 text-xl font-bold text-slate-900">
+                    With best wishes,
+                  </p>
+                  <p className="mt-1 text-2xl font-extrabold text-slate-900">
+                    Mr. Pankaj
+                  </p>
+                  <p className="mt-1 text-lg italic text-slate-600">Principal</p>
+                </article>
 
-            <div className="overflow-hidden rounded-3xl bg-white shadow-sm">
-              <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80"
-                alt="Principal portrait"
-                width={1200}
-                height={1500}
-                className="h-full w-full object-cover"
-              />
+                <div className="mx-auto w-full max-w-sm rounded-3xl bg-slate-100 p-4 shadow-inner sm:p-6">
+                  <div className="overflow-hidden rounded-3xl bg-white">
+                    <Image
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80"
+                      alt="Principal portrait"
+                      width={900}
+                      height={1200}
+                      className="h-auto w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="bg-slate-50 px-4 py-14 sm:px-6 lg:px-8">
-          <div className="mx-auto w-full max-w-6xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
+          <div className="mx-auto w-full max-w-7xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
             <h2 className="text-2xl font-bold sm:text-3xl">Why Parents Choose Us</h2>
             <ul className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
               <li>Experienced teachers with child-first approach</li>

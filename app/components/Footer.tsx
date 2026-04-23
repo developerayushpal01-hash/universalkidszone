@@ -24,10 +24,13 @@ export default function Footer() {
           <Link href="/#gallery" className="transition hover:text-lime-300">
             Gallery
           </Link>
-          <Link href="/#notice" className="transition hover:text-lime-300">
+          <Link href="/notice" className="transition hover:text-lime-300">
             Notice
           </Link>
-          <Link href="/#contact" className="transition hover:text-lime-300">
+          <Link href="/admission" className="transition hover:text-lime-300">
+            Admission
+          </Link>
+          <Link href="/contact" className="transition hover:text-lime-300">
             Contact
           </Link>
         </nav>

@@ -5,17 +5,13 @@ import { useEffect, useState } from "react"
 
 const slides = [
   {
-    src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=80",
-    alt: "White heritage style hotel exterior with domes and arches",
+    src: "/assets/slider.jpg",
+    alt: "Universal Kids Zone slider image 1",
   },
-  {
-    src: "https://images.unsplash.com/photo-1501117716987-c8e1ecb210af?auto=format&fit=crop&w=2000&q=80",
-    alt: "Palm-lined driveway in front of a hotel at dusk",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=2000&q=80",
-    alt: "Resort wing beside landscaped garden",
-  },
+  // {
+  //   src: "/assets/slider1.avif",
+  //   alt: "Universal Kids Zone slider image 2",
+  // },
 ]
 
 const featureItems = [
@@ -42,12 +38,42 @@ const featureItems = [
 ]
 
 const galleryItems = [
-  { title: "Art Class", icon: "🎨", gradient: "from-rose-100 to-red-50" },
-  { title: "Sports Day", icon: "🏆", gradient: "from-lime-100 to-green-50" },
-  { title: "Library Hour", icon: "📚", gradient: "from-amber-100 to-yellow-50" },
-  { title: "Annual Function", icon: "🎭", gradient: "from-lime-100 to-emerald-50" },
-  { title: "Science Lab", icon: "🔬", gradient: "from-pink-100 to-rose-50" },
-  { title: "Nature Walk", icon: "🌱", gradient: "from-sky-100 to-blue-50" },
+  {
+    title: "Art Class",
+    icon: "🎨",
+    gradient: "from-rose-100 to-red-50",
+    image: "/assets/slider.jpg", // Replace with actual image for Art Class
+  },
+  {
+    title: "Sports Day",
+    icon: "🏆",
+    gradient: "from-lime-100 to-green-50",
+    image: "/assets/slider1.avif", // Replace with actual image for Sports Day
+  },
+  {
+    title: "Library Hour",
+    icon: "📚",
+    gradient: "from-amber-100 to-yellow-50",
+    image: "/assets/slider.avif", // Replace with actual image for Library Hour
+  },
+  {
+    title: "Annual Function",
+    icon: "🎭",
+    gradient: "from-lime-100 to-emerald-50",
+    image: "/assets/slider.jpg", // Replace with actual image for Annual Function
+  },
+  {
+    title: "Science Lab",
+    icon: "🔬",
+    gradient: "from-pink-100 to-rose-50",
+    image: "/assets/slider1.avif", // Replace with actual image for Science Lab
+  },
+  {
+    title: "Nature Walk",
+    icon: "🌱",
+    gradient: "from-sky-100 to-blue-50",
+    image: "/assets/slider.avif", // Replace with actual image for Nature Walk
+  },
 ]
 
 const notices = [
@@ -78,17 +104,19 @@ export default function HomePage() {
   const [active, setActive] = useState(0)
 
   useEffect(() => {
-    const id = setInterval(
-      () => setActive((prev) => (prev + 1) % slides.length),
-      5200,
-    )
-    return () => clearInterval(id)
+    if (slides.length > 1) {
+      const id = setInterval(
+        () => setActive((prev) => (prev + 1) % slides.length),
+        5200,
+      )
+      return () => clearInterval(id)
+    }
   }, [])
 
   return (
     <main className="min-h-screen w-full bg-white text-slate-900">
       <section id="home" className="relative w-full">
-        <div className="relative aspect-[21/9] w-full overflow-hidden bg-slate-800">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-white">
           {slides.map((slide, idx) => (
             <Image
               key={slide.src}
@@ -97,28 +125,29 @@ export default function HomePage() {
               fill
               sizes="100vw"
               priority={idx === 0}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+              className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-700 ${
                 idx === active ? "opacity-100" : "opacity-0"
               }`}
             />
           ))}
 
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/50" />
-
-          <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 rounded-full bg-white/80 px-4 py-2 text-slate-900 shadow-xl backdrop-blur">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                aria-label={`Go to slide ${idx + 1}`}
-                onClick={() => setActive(idx)}
-                className={`h-3 w-3 rounded-full transition duration-300 ${
-                  idx === active
-                    ? "bg-rose-700 shadow-[0_0_0_3px_rgba(244,63,94,0.35)]"
-                    : "bg-slate-300 hover:bg-slate-400"
-                }`}
-              />
-            ))}
-          </div>
+          {slides.length > 1 && (
+            <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3 rounded-full bg-white/80 px-4 py-2 text-slate-900 shadow-xl backdrop-blur">
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  onClick={() => setActive(idx)}
+                  suppressHydrationWarning={true}
+                  className={`h-3 w-3 rounded-full transition duration-300 ${
+                    idx === active
+                      ? "bg-rose-700 shadow-[0_0_0_3px_rgba(244,63,94,0.35)]"
+                      : "bg-slate-300 hover:bg-slate-400"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -174,6 +203,7 @@ export default function HomePage() {
             <button
               className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-rose-600 shadow-lg transition hover:scale-105"
               aria-label="Play campus video"
+              suppressHydrationWarning={true}
             >
               ►
             </button>
@@ -226,14 +256,18 @@ export default function HomePage() {
           Glimpses of joy, learning, and growth from our campus.
         </p>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
           {galleryItems.map((item) => (
             <div
               key={item.title}
-              className={`flex min-h-[220px] flex-col items-center justify-start gap-4 rounded-3xl bg-gradient-to-br ${item.gradient} px-6 pt-6 pb-8 text-center shadow-[0_18px_40px_-22px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition duration-300 hover:-translate-y-2 hover:shadow-[0_22px_50px_-18px_rgba(0,0,0,0.16)] hover:ring-rose-100`}
+              className={`relative flex min-h-[220px] w-full max-w-[370px] flex-col items-center justify-center gap-4 rounded-3xl bg-gradient-to-br ${item.gradient} px-6 pt-6 pb-8 text-center shadow-[0_18px_40px_-22px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition duration-300 hover:-translate-y-2 hover:shadow-[0_22px_50px_-18px_rgba(0,0,0,0.16)] hover:ring-rose-100`}
+              style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             >
-              <div className="text-4xl">{item.icon}</div>
-              <h4 className="text-lg font-semibold text-slate-900">{item.title}</h4>
+              <div className="absolute inset-0 rounded-3xl bg-white/70 backdrop-blur-xs"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center">
+                <div className="text-4xl mb-2">{item.icon}</div>
+                <h4 className="text-lg font-semibold text-slate-900">{item.title}</h4>
+              </div>
             </div>
           ))}
         </div>
@@ -311,6 +345,7 @@ export default function HomePage() {
                   <input
                     type="text"
                     placeholder="Enter full name"
+                    suppressHydrationWarning={true}
                     className="h-12 w-full rounded-2xl border border-slate-300 bg-white px-5 text-sm text-slate-800 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-200"
                   />
                 </label>
@@ -322,6 +357,7 @@ export default function HomePage() {
                   <input
                     type="tel"
                     placeholder="+91 XXXXX XXXXX"
+                    suppressHydrationWarning={true}
                     className="h-12 w-full rounded-2xl border border-slate-300 bg-white px-5 text-sm text-slate-800 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-200"
                   />
                 </label>
@@ -333,6 +369,7 @@ export default function HomePage() {
                   <input
                     type="text"
                     placeholder="e.g. Nursery, Class 1, Class 3..."
+                    suppressHydrationWarning={true}
                     className="h-12 w-full rounded-2xl border border-slate-300 bg-white px-5 text-sm text-slate-800 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-200"
                   />
                 </label>
@@ -344,12 +381,14 @@ export default function HomePage() {
                   <textarea
                     rows={4}
                     placeholder="Ask about admissions, fees, curriculum, timings..."
+                    suppressHydrationWarning={true}
                     className="w-full rounded-2xl border border-slate-300 bg-white px-5 py-4 text-sm text-slate-800 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-200"
                   />
                 </label>
 
                 <button
                   type="button"
+                  suppressHydrationWarning={true}
                   className="mt-2 inline-flex h-14 w-full items-center justify-center rounded-full bg-rose-600 px-6 text-base font-semibold text-white shadow-[0_20px_50px_-30px_rgba(239,68,68,0.8)] transition hover:bg-rose-700 sm:text-lg"
                 >
                   Send Message ✉

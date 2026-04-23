@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import React, { useState } from "react"
 import Link from "next/link"
@@ -15,6 +15,9 @@ const classes = [
   { value: "class3", label: "Class 3" },
   { value: "class4", label: "Class 4" },
   { value: "class5", label: "Class 5" },
+  { value: "class6", label: "Class 6" },
+  { value: "class7", label: "Class 7" },
+  { value: "class8", label: "Class 8" },
 ]
 
 export default function AdmissionPage() {
@@ -64,7 +67,7 @@ export default function AdmissionPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/assets/slider.jpg')",
+            backgroundImage: "url('/assets/slider.png')",
           }}
         >
           {/* Blur Overlay */}
@@ -219,3 +222,4 @@ export default function AdmissionPage() {
     </main>
   )
 }
+

@@ -33,7 +33,7 @@ export default function Navbar() {
 
         <Link
           href="/admission"
-          className="inline-flex h-11 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-semibold text-white shadow-[0_20px_50px_-30px_rgba(239,68,68,0.7)] transition hover:bg-red-700"
+          className="inline-flex h-11 items-center justify-center rounded-full bg-red-600 px-6 text-sm font-semibold text-white shadow-[0_20px_50px_-30px_rgba(239,68,68,0.7)] transition hover:bg-red-700 animate-[navbar-shake_1.2s_ease-in-out_infinite]"
         >
           Admission Open
         </Link>

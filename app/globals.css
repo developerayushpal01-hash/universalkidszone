@@ -24,3 +24,108 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes navbar-shake {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  20%,
+  60% {
+    transform: translateY(-3px);
+  }
+  40%,
+  80% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes whatsapp-float-shake {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-3px) rotate(-6deg);
+  }
+  40% {
+    transform: translateY(2px) rotate(6deg);
+  }
+  60% {
+    transform: translateY(-2px) rotate(-4deg);
+  }
+  80% {
+    transform: translateY(1px) rotate(4deg);
+  }
+}
+
+.feature-card-reveal {
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    translate 0.3s ease;
+}
+
+.feature-card-reveal.scroll-reveal-ready {
+  opacity: 0;
+  transform: translateY(48px) scale(0.96);
+}
+
+.feature-card-reveal.scroll-reveal-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.gallery-card-reveal {
+  transition:
+    opacity 0.85s ease,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s ease,
+    box-shadow 0.3s ease;
+  will-change: transform, opacity, filter;
+}
+
+.gallery-card-reveal.scroll-reveal-ready {
+  opacity: 0;
+  transform:
+    perspective(1200px)
+    translate3d(var(--gallery-shift, 48px), 72px, 0)
+    rotateY(var(--gallery-rotate, 6deg))
+    rotateX(10deg)
+    scale(0.88);
+  filter: blur(10px) saturate(0.85);
+}
+
+.gallery-card-overlay {
+  transition:
+    background-color 0.8s ease,
+    backdrop-filter 0.8s ease;
+}
+
+.gallery-card-icon {
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
+}
+
+.gallery-card-reveal.scroll-reveal-active {
+  opacity: 1;
+  transform:
+    perspective(1200px)
+    translate3d(0, 0, 0)
+    rotateY(0deg)
+    rotateX(0deg)
+    scale(1);
+  filter: blur(0) saturate(1);
+}
+
+.gallery-card-reveal.scroll-reveal-active .gallery-card-overlay {
+  background-color: rgb(255 255 255 / 0.58);
+  backdrop-filter: blur(8px);
+}
+
+.gallery-card-reveal.scroll-reveal-active .gallery-card-icon {
+  transform: translateY(-4px) scale(1.08) rotate(-4deg);
+  filter: drop-shadow(0 10px 16px rgb(15 23 42 / 0.14));
+}

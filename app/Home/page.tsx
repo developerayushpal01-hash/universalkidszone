@@ -226,7 +226,7 @@ export default function HomePage() {
             Vibrant campus, personal attention, and a future-ready outlook.
           </h2>
           <p className="text-base leading-relaxed text-slate-700">
-            Jaison&apos;s Academy, one of the best schools in MHOW, has a vibrant
+           Universal kids zone, one of the best schools in MHOW, has a vibrant
             atmosphere for teaching and learning and a faculty rich in talent and
             experience. With enterprise and endeavour as its watchwords, the school
             keeps an eye on new educational initiatives so the road to excellence

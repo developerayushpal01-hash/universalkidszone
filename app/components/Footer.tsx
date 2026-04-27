@@ -39,6 +39,9 @@ export default function Footer() {
           (c) 2025 UKZ School. All rights reserved.
         </p>
       </div>
+      <div className="ps-27 py-4">
+        Developed by : <a className="text-blue-400 italic" href="https://ayushpal-dev-portfolio.vercel.app/ " target="_blank">Ayush Pal</a>
+      </div>
     </footer>
   );
 }

@@ -70,6 +70,27 @@ export const metadata: Metadata = {
     "school in pithampur",
     "best school in pithampur",
     "nursery school pithampur",
+    "kids learning website",
+    "online learning for kids",
+    "kids education platform",
+    "fun learning for children",
+    "free kids education India",
+    "Universal Kids Zone",
+    "universalkidszone",
+    "kids zone website",
+    "free learning website for kids",
+    "best kids learning platform India",
+    "fun educational activities for kids",
+    "online games for kids learning",
+    "kids study website free",
+    "interactive learning for children",
+    "kids learning website",
+    "kids education platform",
+    "online learning for kids",
+    "fun learning for children",
+    "kids activity website",
+    "children education online",
+    "Pithampur school"
   ],
 };
 
@@ -81,9 +102,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden`}
     >
-      <body>
+      <body className="overflow-x-hidden">
         {children}
         <WhatsAppFloat />
 

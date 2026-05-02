@@ -188,6 +188,7 @@ export default function HomePage() {
                     key={idx}
                     aria-label={`Go to slide ${idx + 1}`}
                     onClick={() => setActive(idx)}
+                    suppressHydrationWarning
                     className={`h-2.5 rounded-full transition-all duration-300 ${
                       idx === active ? "w-9 bg-rose-500" : "w-2.5 bg-white/70 hover:bg-white"
                     }`}
@@ -198,6 +199,7 @@ export default function HomePage() {
               <button
                 aria-label="Previous slide"
                 onClick={goToPrev}
+                suppressHydrationWarning
                 className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/35 text-white shadow-lg backdrop-blur transition hover:bg-black/55 md:left-6"
               >
                 {"<"}
@@ -205,6 +207,7 @@ export default function HomePage() {
               <button
                 aria-label="Next slide"
                 onClick={goToNext}
+                suppressHydrationWarning
                 className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/35 text-white shadow-lg backdrop-blur transition hover:bg-black/55 md:right-6"
               >
                 {">"}
@@ -216,7 +219,7 @@ export default function HomePage() {
 
       <section
         id="about"
-        className="relative isolate mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 py-20 md:flex-row md:items-center"
+        className="relative isolate mx-auto flex w-full max-w-7xl flex-col gap-10 overflow-x-clip px-6 py-20 md:flex-row md:items-center"
       >
         <div className="flex-1 space-y-5">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-600">

@@ -39,8 +39,18 @@ export default function Footer() {
           (c) 2025 UKZ School. All rights reserved.
         </p>
       </div>
-      <div className="ps-27 py-4">
-        Developed by : <a className="text-blue-400 italic" href="https://ayushpal-dev-portfolio.vercel.app/ " target="_blank">Ayush Pal</a>
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-4 py-4 text-center text-sm text-zinc-400 sm:justify-end sm:text-base md:px-6">
+        <span className="flex flex-wrap items-center justify-center gap-1 sm:justify-end">
+          <span>Developed by:</span>
+          <a
+            className="italic text-blue-400 transition hover:text-blue-300"
+            href="https://ayushpal-dev-portfolio.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ayush Pal
+          </a>
+        </span>
       </div>
     </footer>
   );
